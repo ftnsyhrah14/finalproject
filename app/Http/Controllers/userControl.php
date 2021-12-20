@@ -12,7 +12,7 @@ class userControl extends Controller
 {
     public function userproject()
     {
-        //$proj=project::all();
+        
 
         $proj = project::all();
         return view ("user.ownproject",compact("proj"));

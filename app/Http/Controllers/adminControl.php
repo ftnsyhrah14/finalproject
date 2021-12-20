@@ -23,7 +23,7 @@ class adminControl extends Controller
         return redirect()->back();
     }
 
-    public function project()
+    public function project() //display project
     {
         $proj=project::all();
         return view("admin.projects",compact("proj"));

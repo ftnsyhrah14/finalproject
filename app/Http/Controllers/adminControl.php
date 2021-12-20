@@ -56,16 +56,15 @@ class adminControl extends Controller
 
     function showData($id)
     {
-        $data=Project::find($id);
+        $x=Project::find($id);
         $x=DB::table('users')
         ->join('projects','users.id', "=", "projects.leaderId")->get();
-        return view('admin.updateproject',['disp'=>$data]);
+        return view('admin.updateproject',['disp'=>$x]);
 
     }
 
     function update(Request $req)
     {
-        //$proj=Project::find($req->projectId);
         $proj = Project::table('projects')->where('projectId', $id)->first();
 
         $proj->projectName=$req->projectName;

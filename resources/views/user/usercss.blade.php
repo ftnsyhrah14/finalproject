@@ -1,7 +1,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>UNITEN R&D</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="user/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="user/assets/vendors/css/vendor.bundle.base.css">
@@ -17,4 +17,4 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="user/assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="user/assets/images/favicon.png" />
+    <link rel="shortcut icon" href="user/assets/images/URND.png" />

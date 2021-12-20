@@ -32,9 +32,9 @@ class userControl extends Controller
     public function showData($id)
     {
         $data=Project::find($id);
-        $data=DB::table('users')
-        ->join('projects','users.id', "=", "projects.leaderId")->get();
-        return view('user.updateownproject',['disp'=>$data]);
+        $user=User::all();
+
+        return view('user.updateownproject',['data'=>$data, 'user'=>$user]);
     }
 
     function update(Request $req)
@@ -43,6 +43,7 @@ class userControl extends Controller
 
         $data->projectName = $req->projectName;
         $data->projectCategory = $req->projectCategory;
+        $data->projectMembers = json_encode($req->projectMembers); 
         $data->startDate = $req->startDate;
         $data->endDate = $req->endDate;
         $data->projectDuration = $req->projectDuration;
@@ -50,6 +51,7 @@ class userControl extends Controller
         $data->projectClient = $req->projectClient;
         $data->projectProgress = $req->projectProgress;
         $data->projectStatus = $req->projectStatus;
+        
 
         $data->save();
         return redirect('ownproject');

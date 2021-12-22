@@ -3,16 +3,39 @@
 <html lang="en">
   <head>
   @include("admin.admincss") 
+  <style>
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 140%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 5px;
+}
+
+tr:nth-child(even) {
+  background-color: #000000;
+}
+.tab{
+    margin-top:auto;
+}
+
+h1{
+  text-align:center;
+}
+</style>
   </head>
   <body>
   <div class="container-scroller">
   @include("admin.adminnavbar") 
 
-
-  <h1 style="center">Project List</h1></br><br>
+  <div class="tab">
+  <h1>Project List</h1></br>
   <div><a href="/new">New Project</a><br></div>
-    <div style="position: relative; top:60px; right:=150px">
-        <table bgcolor="grey" border="3px">
+        <table>
             <tr align="center">
                 <th style="padding: 30px">Project Name</th>
                 <th style="padding: 30px">Project Category</th>
@@ -30,8 +53,7 @@
 
                   @endif
                 </td>
-                <td><a href="{{url('/updateproject',$data->projectId)}}">Edit</a></td>
-                <td><a href="{{url('/deleteproject',$data->projectId)}}">Delete</a></td>
+                <td><a href="{{url('/viewproject',$data->projectId)}}">View</a></td>
             </tr>
             @endforeach
         </table>

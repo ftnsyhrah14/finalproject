@@ -36,6 +36,7 @@
       align-items: center;
       height: inherit;
       padding: 20px;
+      background:#000000;
       }
       form {
       width: 50%;

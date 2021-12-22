@@ -13,12 +13,7 @@
               <span class="menu-title">Project</span>
             </a>
           </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
-              <span class="menu-title">Form Elements</span>
-            </a>
-          </li>
-          @auth
+                  @auth
           <li class="nav-item menu-items">
           <span class="nav-link">
             <a href="{{ route('logout') }}" onclick ="event.preventDefault();

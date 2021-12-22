@@ -2,15 +2,37 @@
 <html lang="en">
   <head>
   @include("user.usercss") 
+  <style>
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 110%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 5px;
+}
+
+tr:nth-child(even) {
+  background-color: #000000;
+}
+.tab{
+    margin:auto;
+}
+
+h1{
+  text-align:center;
+}
+</style>
   </head>
   <body>
   <div class="container-scroller">
   @include("user.usernavbar") 
-
-
-  <h1 style="center">Project List</h1></br><br>
-    <div style="position: relative; top:60px; right:=150px">
-        <table bgcolor="grey" border="3px">
+  <div class="tab">
+  <h1>Project List</h1></br>
+        <table>
             <tr align="center">
                 <th style="padding: 30px">Project Name</th>
                 <th style="padding: 30px">Project Category</th>
@@ -29,7 +51,6 @@
                   @endif
                 </td>
                 <td><a href="{{url('/updownproject',$data->projectId)}}">Edit</a></td>
-                <td><a href="{{url('/delownproject',$data->projectId)}}">Delete</a></td>
             </tr>
             @endforeach
         </table>

@@ -70,14 +70,24 @@ h3{
           <td>{{$disp->projectCategory}}</td>
       </tr>
       <tr>
-          <td>Project Leader :</td>
-          <td>@if($disp->leaderId==$disp->id)
-                {{$disp->name}}
-                @endif</td>
-      </tr>
-      <tr>
           <td>Project Members :</td>
-          <td>{{$disp->projectMembers}}</td>
+          <td>
+            @foreach($x as $data)
+
+            @foreach(explode(',',$disp->projectMembers) as $name)
+
+            @if ($name==$data->id)
+
+            <ul style="list-style-type:square">
+                <li>{{$data->name}}</li>
+            </ul>
+            @endif
+
+            @endforeach
+
+            @endforeach
+
+          </td>
       </tr>
       <tr>
           <td>Start Date :</td>

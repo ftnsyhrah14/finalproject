@@ -41,9 +41,10 @@ class userControl extends Controller
     {
         $data=Project::find($req->projectId);
 
+
+        echo $data->projectMembers=implode(',',(array)$req->projectMembers); 
         $data->projectName = $req->projectName;
         $data->projectCategory = $req->projectCategory;
-        $data->projectMembers = json_encode($req->projectMembers); 
         $data->startDate = $req->startDate;
         $data->endDate = $req->endDate;
         $data->projectDuration = $req->projectDuration;

@@ -29,6 +29,7 @@ Route::get("/projects",[adminControl::class,"showAllproject"]);
 Route::get('/new',[adminControl::class,"shownewForm"]);
 Route::POST("/add",[adminControl::class,"addproject"]);
 Route::get('viewproject/{projectId}',[adminControl::class,"showDetail"]);
+Route::get('delproject/{projectId}',[adminControl::class,"deleteproject"]);
 Route::get("/edit/{projectId}",[adminControl::class,"update"]);
 
 

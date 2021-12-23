@@ -37,15 +37,18 @@ class adminControl extends Controller
 
     function showDetail($id)
     {
+        $x=DB::table('users')
+        ->join('projects','users.id', "=", "projects.leaderId")->get();
         $disp=project::find($id);
-        return view('admin.viewproject',['disp'=>$disp]);
+        return view('admin.viewproject',['disp'=>$disp, 'x'=>$x]);
 
     }
 
     public function shownewForm()
     {
-        $x=DB::table('users')
-        ->join('projects','users.id', "=", "projects.leaderId")->get();
+        //$x=DB::table('users')
+        //->join('projects','users.id', "=", "projects.leaderId")->get();
+        $x=DB::table('users')->get();
         return view ("admin.formaddproject",['x'=>$x]);
     }
 
@@ -75,4 +78,12 @@ class adminControl extends Controller
 
         return redirect('projects');
     }
+
+    public function deleteproject($id) //delete user
+    {
+        $data=project::find($id);
+        $data->delete();
+        return redirect()->back();
+    }
+
 }

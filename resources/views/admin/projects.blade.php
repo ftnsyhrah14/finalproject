@@ -54,6 +54,7 @@ h1{
                   @endif
                 </td>
                 <td><a href="{{url('/viewproject',$data->projectId)}}">View</a></td>
+                <td><a href="{{url('/delproject',$data->projectId)}}">Delete</a></td>
             </tr>
             @endforeach
         </table>

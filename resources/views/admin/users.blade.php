@@ -7,7 +7,7 @@
   table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 95%;
+  width: 100%;
   margin-top:30%;
   margin-left: auto;
   margin-right: auto;
@@ -43,9 +43,9 @@ h1{
   <div class="tab">
         <table>
             <tr align="center">
-                <th style="padding: 30px">Name</th>
-                <th style="padding: 30px">Email</th>
-                <th style="padding: 30px">Action</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
             </tr>
 
             @foreach($data as $data)

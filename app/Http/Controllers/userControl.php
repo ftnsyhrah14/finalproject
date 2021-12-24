@@ -20,7 +20,7 @@ class userControl extends Controller
         //$x=DB::table('users')
         //->join('projects','users.id', "=", "projects.leaderId")->get();
         //return view ("user.ownproject",['x'=>$x]);
-        //return view('generate')->with('attendance',$attendance);
+
     }
 
     public function showForm()

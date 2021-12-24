@@ -108,12 +108,12 @@
             </div>
             <div class="item">
               <p>Start Date:</p>
-              <input type="date" name="startDate" />
+              <input type="date" name="startDate" value="{{$data->startDate}}" />
               <i class="fas fa-calendar-alt"></i>
             </div>
             <div class="item">
               <p>End Date:</p>
-              <input type="date" name="endDate" />
+              <input type="date" name="endDate" value="{{$data->endDate}}"/>
               <i class="fas fa-calendar-alt"></i>
             </div>
             <div class="item">
@@ -154,8 +154,8 @@
                 <p>Project Member</p>
                  @foreach($user as $d)
                 @if ($d->usertype=='0')
-                <input type="checkbox" id="projectMembers" name="projectMembers[]" value="{{$d->id}}">
-                <label for="projectMembers" class="check"><span>{{$d->name}}</span></label><br/>
+                <input type="checkbox" id="projectMembers" name="projectMembers[]" value="{{$d->id}}" >
+                <label for="projectMembers" class="check"><span>{{$d->name }}</span></label><br/>
                 @endif
                 @endforeach
               </div>  

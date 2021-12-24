@@ -50,7 +50,12 @@ h1{
 
                   @endif
                 </td>
-                <td><a href="{{url('/updownproject',$data->projectId)}}">Edit</a></td>
+                <td>
+                @if($data->leaderId == auth()->id())
+                  <a href="{{url('/updownproject',$data->projectId)}}">Edit</a>
+                @else
+                <a >Not Allowed</a>
+                @endif</td>
             </tr>
             @endforeach
         </table>

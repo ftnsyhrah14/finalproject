@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\User;
 use App\Models\Project;
+use DateTime;
 
 class userControl extends Controller
 {
@@ -41,13 +42,18 @@ class userControl extends Controller
     {
         $data=Project::find($req->projectId);
 
-
+        
         echo $data->projectMembers=implode(',',(array)$req->projectMembers); 
         $data->projectName = $req->projectName;
         $data->projectCategory = $req->projectCategory;
+
         $data->startDate = $req->startDate;
         $data->endDate = $req->endDate;
-        $data->projectDuration = $req->projectDuration;
+        $sdate = new Datetime($req ->startDate);
+        $edate = new Datetime($req ->endDate);
+        $interval = $sdate ->diff($edate);
+        $data->projectDuration= $interval ->format('%m');
+       
         $data->projectCost = $req->projectCost;
         $data->projectClient = $req->projectClient;
         $data->projectProgress = $req->projectProgress;

@@ -116,10 +116,10 @@
               <input type="date" name="endDate" value="{{$data->endDate}}"/>
               <i class="fas fa-calendar-alt"></i>
             </div>
-            <div class="item">
+            <!--<div class="item">
               <p>Duration(in month):</p>
               <input type="text" name="projectDuration" value="{{$data->projectDuration}}"/>
-            </div>
+            </div>-->
             <div class="item">
               <p>Cost(in RM):</p>
               <input type="text" name="projectCost" value="{{$data->projectCost}}"/>

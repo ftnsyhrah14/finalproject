@@ -63,4 +63,12 @@ class userControl extends Controller
         $data->save();
         return redirect('ownproject');
     }
+    function showDetail($id)
+    {
+        $x=DB::table('users')
+        ->join('projects','users.id', "=", "projects.leaderId")->get();
+        $disp=project::find($id);
+        return view('user.viewdetails',['disp'=>$disp, 'x'=>$x]);
+
+    }
 }

@@ -50,6 +50,7 @@ h1{
 
                   @endif
                 </td>
+                <td><a href="{{url('/viewdetails',$data->projectId)}}">View</a></td>
                 <td>
                 @if($data->leaderId == auth()->id())
                   <a href="{{url('/updownproject',$data->projectId)}}">Edit</a>

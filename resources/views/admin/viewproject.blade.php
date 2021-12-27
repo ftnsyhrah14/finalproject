@@ -99,7 +99,7 @@ h3{
       </tr>
       <tr>
           <td>Project Duration :</td>
-          <td>{{$disp->projectDuration}} month</td>
+          <td></td>
       </tr>
       <tr>
           <td>Project Cost :</td>

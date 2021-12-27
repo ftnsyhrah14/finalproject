@@ -37,8 +37,9 @@ class adminControl extends Controller
 
     function showDetail($id)
     {
-        $x=DB::table('users')
-        ->join('projects','users.id', "=", "projects.leaderId")->get();
+        $x=user::all();
+        //$x=DB::table('users')
+        //->join('projects','users.id', "=", "projects.leaderId")->get();
         $disp=project::find($id);
         return view('admin.viewproject',['disp'=>$disp, 'x'=>$x]);
 

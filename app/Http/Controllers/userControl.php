@@ -34,8 +34,9 @@ class userControl extends Controller
     {
         $data=Project::find($id);
         $user=User::all();
-
-        return view('user.updateownproject',['data'=>$data, 'user'=>$user]);
+        $x=DB::table('users')
+        ->join('projects','users.id', "=", "projects.leaderId")->get();
+        return view('user.updateownproject',['data'=>$data, 'user'=>$user,'x'=>$x]);
     }
 
     function update(Request $req)
@@ -65,10 +66,21 @@ class userControl extends Controller
     }
     function showDetail($id)
     {
-        $x=DB::table('users')
-        ->join('projects','users.id', "=", "projects.leaderId")->get();
+        $x=user::all();
+        //$x=DB::table('users')
+        //->join('projects','users.id', "=", "projects.leaderId")->get();
         $disp=project::find($id);
-        return view('user.viewdetails',['disp'=>$disp, 'x'=>$x]);
+        
+        $startdate = $disp->startDate;
+        $enddate = $disp->endDate;
+        $sdate = new Datetime($startdate);
+        $edate = new Datetime($enddate);
+        $interval = $sdate ->diff($edate);
+        $duration= $interval ->format('%y year,%m month');
+
+        return view('user.viewdetails',['disp'=>$disp, 'x'=>$x,'duration'=>$duration]);
+
+
 
     }
 }

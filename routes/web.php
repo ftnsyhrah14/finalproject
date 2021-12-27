@@ -37,7 +37,7 @@ Route::get("/edit/{projectId}",[adminControl::class,"update"]);
 Route::get("/ownproject",[userControl::class,"showForm"]);
 Route::get('updownproject/{projectId}',[userControl::class,"showData"]);
 Route::POST("/edit",[userControl::class,"update"]);
-Route::get('viewdetails/{projectId}',[adminControl::class,"showDetail"]);
+Route::get('viewdetails/{projectId}',[userControl::class,"showDetail"]);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
